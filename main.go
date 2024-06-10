@@ -30,12 +30,17 @@ func main() {
 		CustomAssetPath: *staticPath,
 	}
 
+	port  := os.Getenv("FOO")os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	fs := http.FileServer(http.Dir("web/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", devApp.IndexHandler)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s",port), nil))
 }
 
 func (a *App) IndexHandler(w http.ResponseWriter, r *http.Request) {
