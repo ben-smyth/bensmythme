@@ -18,7 +18,7 @@ type App struct {
 
 func main() {
 	title := flag.String("title", "bensmyth", "Title of the application")
-	staticPath := flag.String("staticPath", "http://localhost:8080/static/", "Path to static files")
+	staticPath := flag.String("staticPath", "https://bensmythme-f22f5cf2e561.herokuapp.com/static/", "Path to static files")
 
 	flag.Parse()
 

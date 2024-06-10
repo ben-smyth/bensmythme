@@ -1,5 +1,0 @@
-build:
-  docker:
-    web: Dockerfile
-run:
-  web: ./bensmythme --staticPath="https://bensmythme-f22f5cf2e561.herokuapp.com/static/"
