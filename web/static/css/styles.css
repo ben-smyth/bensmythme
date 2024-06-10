@@ -14,8 +14,8 @@
 }
 .image-container {
     width: 90%; /* Ensure the container takes up the full width of the section */
-    padding: 5%;
+    padding-right: 5%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
 }

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: golang:1.22
+    container_name: app
+    working_dir: /app
+    build:
+      context: ../
+      dockerfile: build/Dockerfile
+    ports:
+      - "8080:8080"
+    develop:
+      watch:
+        - action: rebuild
+          path: .
