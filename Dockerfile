@@ -16,6 +16,6 @@ COPY --from=builder /app/web /app/web
 RUN chmod +x /app/bensmythme
 
 WORKDIR /app
-EXPOSE 8080
+# EXPOSE 8080
 
 CMD ["./bensmythme"]
