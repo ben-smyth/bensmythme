@@ -1,5 +1,5 @@
 # bensmythme
-Personal site
+Personal site.
 
 ## Dev
 ```
