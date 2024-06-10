@@ -1,8 +1,31 @@
 {{define "resume"}}
 <section class="section">
-<div>
-    <h1>resume</h1>
-<img src="{{.CustomAssetPath}}/images/portrait_bs.jpeg" alt="Portrait" class="rounded-circle ">
+<div class="col-6 d-flex flex-column text-end">
+    <h1>bensmyth</h1>
+    <div class="navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#experience">> experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portfolio">> portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#blog">> blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">> contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- <div class="col-md-6 d-flex flex-column">
+
+</div> -->
+<div class="col-6 d-flex flex-column justify-content-center align-items-center">
+    <div class="image-container">
+        <img src="{{.CustomAssetPath}}/images/portrait_bs.jpeg" alt="Portrait" class="rounded-circle img-fluid">
+    </div>
 </div>
 </section>
 {{end}}

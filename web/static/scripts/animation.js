@@ -7,3 +7,12 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
         });
     });
 });
+
+window.addEventListener('scroll', function() {
+    var button = document.getElementById('back-to-top');
+    if (window.scrollY > 1000) {
+        button.style.display = 'block';
+    } else {
+        button.style.display = 'none';
+    }
+});
