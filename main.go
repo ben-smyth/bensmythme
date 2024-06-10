@@ -30,7 +30,7 @@ func main() {
 		CustomAssetPath: *staticPath,
 	}
 
-	port  := os.Getenv("FOO")os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
@@ -40,7 +40,7 @@ func main() {
 
 	http.HandleFunc("/", devApp.IndexHandler)
 
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s",port), nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 }
 
 func (a *App) IndexHandler(w http.ResponseWriter, r *http.Request) {
