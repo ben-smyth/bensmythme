@@ -16,12 +16,12 @@ type App struct {
 }
 
 func main() {
-	staticPath := os.Getenv("HD_APP_STATICPATH")
+	staticPath := os.Getenv("APP_STATICPATH")
 	if staticPath == "" {
 		staticPath = "http://localhost/static/"
 	}
 
-	title := os.Getenv("HD_APP_TITLE")
+	title := os.Getenv("APP_TITLE")
 	if title == "" {
 		title = "bensmyth"
 	}
