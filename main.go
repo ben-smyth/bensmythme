@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"html/template"
 	"log"
@@ -17,22 +16,28 @@ type App struct {
 }
 
 func main() {
-	title := flag.String("title", "bensmyth", "Title of the application")
-	staticPath := flag.String("staticPath", "https://bensmythme-f22f5cf2e561.herokuapp.com/static/", "Path to static files")
-
-	flag.Parse()
-
-	fmt.Printf("Title: %s\n", *title)
-	fmt.Printf("Static Path: %s\n", *staticPath)
-
-	devApp := &App{
-		Title:           *title,
-		CustomAssetPath: *staticPath,
+	staticPath := os.Getenv("APP_STATICPATH")
+	if staticPath == "" {
+		staticPath = "http://localhost/static/"
 	}
 
+	title := os.Getenv("APP_TITLE")
+	if staticPath == "" {
+		staticPath = "bensmyth"
+	}
+
+	// port assigned by heroku
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
+	}
+
+	fmt.Printf("Title: %s\n", title)
+	fmt.Printf("Static Path: %s\n", staticPath)
+
+	devApp := &App{
+		Title:           title,
+		CustomAssetPath: staticPath,
 	}
 
 	fs := http.FileServer(http.Dir("web/static"))

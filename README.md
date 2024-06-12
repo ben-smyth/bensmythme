@@ -1,12 +1,10 @@
 # bensmythme
 Personal site.
 
-## Dev
+https://bensmyth.me/
+
+## Dev Environment
 ```
 air
 ```
-
-## Prod
-```
-docker run -it -p 8080:8080 bensmythme:latest ./bensmythme --title="test" --staticPath="https://bensmyth.me/static/"
-```
+Runs the program using .air.toml and watches for any application changes.
