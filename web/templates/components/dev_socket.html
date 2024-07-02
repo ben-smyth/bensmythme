@@ -1,0 +1,28 @@
+{{ define "devSocket" }}
+    <script>
+      let active = false;
+      sock = new WebSocket("ws://localhost:8080/dev");
+      sock.onopen = function (event) {
+        console.log("connected");
+        active = true;
+      };
+
+      sock.onmessage = function(event) {
+        console.log("Message from server: ", event.data);
+      };
+
+      sock.onerror = function(error) {
+        console.error("WebSocket error observed:", error);
+      }; 
+
+      sock.onclose = function (event) {
+        console.log("disconnected");
+        if (active) {
+          setTimeout(function () {
+            location.reload();
+            active = false;
+          }, 2000);
+        }
+      };
+    </script>
+{{ end }}

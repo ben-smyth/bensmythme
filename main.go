@@ -8,22 +8,33 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/gorilla/mux"
+	"github.com/gorilla/websocket"
 )
 
 type App struct {
 	Title           string
 	CustomAssetPath string
+	Dev             bool
 }
 
 func main() {
 	staticPath := os.Getenv("APP_STATICPATH")
 	if staticPath == "" {
-		staticPath = "http://localhost/static/"
+		staticPath = "http://localhost:8080/static/"
 	}
 
 	title := os.Getenv("APP_TITLE")
 	if title == "" {
 		title = "bensmyth"
+	}
+
+	dev := false
+
+	envfromenv := os.Getenv("APP_DEV")
+	if envfromenv == "" {
+		dev = true
 	}
 
 	// port assigned by heroku
@@ -34,18 +45,28 @@ func main() {
 
 	fmt.Printf("Title: %s\n", title)
 	fmt.Printf("Static Path: %s\n", staticPath)
+	fmt.Printf("Dev: %v\n", dev)
 
 	devApp := &App{
 		Title:           title,
 		CustomAssetPath: staticPath,
+		Dev:             dev,
 	}
 
+	// HTTP
+	r := mux.NewRouter()
+
 	fs := http.FileServer(http.Dir("web/static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	http.HandleFunc("/", devApp.IndexHandler)
+	// hot reloading for dev environment
+	if dev {
+		r.HandleFunc("/dev", handleWebSocket)
+	}
 
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
+	r.HandleFunc("/", devApp.IndexHandler)
+
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
 }
 
 func (a *App) IndexHandler(w http.ResponseWriter, r *http.Request) {
@@ -71,3 +92,35 @@ var Templ = func() *template.Template {
 	}
 	return t
 }()
+
+var upgrader = websocket.Upgrader{
+	ReadBufferSize:  1024,
+	WriteBufferSize: 1024,
+	CheckOrigin: func(r *http.Request) bool {
+		return true
+	},
+}
+
+func handleWebSocket(w http.ResponseWriter, r *http.Request) {
+	conn, err := upgrader.Upgrade(w, r, nil)
+	if err != nil {
+		fmt.Println("Upgrade failed:", err)
+		return
+	}
+	defer conn.Close()
+
+	for {
+		messageType, message, err := conn.ReadMessage()
+		if err != nil {
+			fmt.Println("Read failed:", err)
+			break
+		}
+
+		fmt.Printf("Received: %s\n", message)
+
+		if err := conn.WriteMessage(messageType, message); err != nil {
+			fmt.Println("Write failed:", err)
+			break
+		}
+	}
+}

@@ -1,8 +1,60 @@
 {{define "skills"}}
-<section id="skills" class="section">
-    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-        <h1>skill</h1>
-        <p>These are my skills.</p>
+<section id="skills" class="skill-section">
+    <h1>skills and passions</h1>
+    <div class="skills-container">
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> kubernetes and containerisation </h2>
+                <img src="{{.CustomAssetPath}}images/skills/kubernetes_logo.svg" alt="Kubernetes and Containerisation">
+            </div>
+            <p> Kubernetes administration and development work. </p>
+            <p> </p>
+            <div class="card-certification">
+                <img src="{{.CustomAssetPath}}images/certifications/cka.png" alt="CKA">
+            </div>
+        </div>
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> networking </h2>
+                <img src="{{.CustomAssetPath}}images/skills/networking.png" alt="Networking">
+            </div>
+            <p> </p>
+            <p> </p>
+            <div class="card-certification">
+                <img src="{{.CustomAssetPath}}images/certifications/ccna.png" alt="CCNA">
+            </div>
+        </div>
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> golang </h2>
+                <img src="{{.CustomAssetPath}}images/skills/golang.png" alt="Golang">
+            </div>
+            <p> </p>
+            <p> </p>
+        </div>
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> platform </h2>
+                <img src="{{.CustomAssetPath}}images/skills/platform.png" alt="Platform">
+            </div>
+            <p> </p>
+            <p> </p>
+        </div>
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> observability and monitoring </h2>
+                <img src="{{.CustomAssetPath}}images/skills/otel_logo.png" alt="Otel">
+            </div>
+            <p> </p>
+            <p> </p>
+        </div>
+        <div class="card skills-card">
+            <div class="card-header">
+                <h2> more! </h2>
+            </div>
+            <p> </p>
+            <p> </p>
+        </div>
     </div>
 </section>
 {{end}}

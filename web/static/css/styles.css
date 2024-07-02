@@ -1,9 +1,12 @@
 .section {
-    height: 100vh; 
+    height: 110vh; 
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    background: #f0f0f0;
 }
+
 
 #back-to-top {
     position: fixed;
@@ -12,10 +15,168 @@
     display: none;
     z-index: 100;
 }
+
 .image-container {
-    width: 90%; /* Ensure the container takes up the full width of the section */
+    width: 80%; /* Ensure the container takes up the full width of the section */
     padding-right: 5%;
     display: flex;
     justify-content: left;
     align-items: left;
+}
+
+.wipstamp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.8); */
+    pointer-events: none;
+    /* z-index: 1; */
+}
+
+.wipstamp img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+.skill-section {
+    height: 135vh; 
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background: #f0f0f0;
+    text-align: left; /* Center the text if needed */
+}
+
+.skill-section h1 {
+    align-self: flex-start;
+    margin: 0; /* Remove any default margin */
+    padding-top: 3vh; /* Add padding if needed to adjust spacing */
+    padding-left: 3vh;
+    padding-bottom: 3vh;
+    /* font-size: 4em; /* Adjust the font size as needed */ */
+}
+
+.skills-card {
+    justify-content:top;
+    align-items: top;
+    height: 80%;
+    width: 600px;
+    max-width: 90vw; /* Use viewport width to ensure it doesn't exceed device width */
+    margin: 35px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skills-card h1 {
+    align-self: top;
+    font-size: 2em;
+}
+.skills-card img {
+    width: 100%;
+    max-width: 100px; /* Set the max width for the image */
+    max-height: 100px; /* Set the max height for the image */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 15px;
+    position: absolute;
+}
+
+.skills-card:hover {
+    transform: translateY(-10px);
+}
+
+.skills-container {
+    position: absolute;
+    overflow-x: scroll;
+    /* margin: 20px; */
+    width: 100%;
+    height: 100%;
+    /* background: #f9f9f9; */
+    /* white-space: nowrap; */
+    display: flex;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    padding-top: 15vh;
+    /* padding-left: 75px; */
+    scroll-behavior: smooth;
+}
+
+.skills-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+}
+
+
+.card-header {
+    position: relative;
+    width: 100%;
+    min-height: 10%;
+    margin-bottom: 15px;
+    border-bottom: dashed;
+    
+}
+
+.card-header img {
+    width: 50%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    margin-right: 10px;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+}
+
+.card-header h2 {
+    font-size: 1.6em;
+    margin: 0;
+    text-align: left;
+    padding-right: 60px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Ensure long words break and wrap */
+}
+
+.card p {
+    font-size: 1.2em;
+    padding-left: 10px;
+    overflow-wrap: break-word; /* Ensure long words break and wrap */
+}
+
+.card-certification {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 15%;
+    width: 100%;
+}
+
+
+.card-certification img {
+    width: 50%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .skills-card {
+        width: 90%;
+        /* margin: 10px auto; */
+    }
+
+    .card-header img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+    .card-certification img {
+        max-width: 100px;
+        max-height: 100px;
+    }
 }
