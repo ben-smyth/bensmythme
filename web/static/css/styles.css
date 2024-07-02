@@ -42,7 +42,7 @@
 }
 
 .skill-section {
-    height: 135vh; 
+    height: 110vh; 
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -78,16 +78,16 @@
     align-self: top;
     font-size: 2em;
 }
-.skills-card img {
-    width: 100%;
-    max-width: 100px; /* Set the max width for the image */
-    max-height: 100px; /* Set the max height for the image */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: 15px;
-    position: absolute;
-}
-
+/* .skills-card img { */
+/*     width: 100%; */
+/*     max-width: 100px; /* Set the max width for the image */ */
+/*     max-height: 100px; /* Set the max height for the image */ */
+/*     border-top-left-radius: 10px; */
+/*     border-top-right-radius: 10px; */
+/*     margin-bottom: 15px; */
+/*     position: absolute; */
+/* } */
+/**/
 .skills-card:hover {
     transform: translateY(-10px);
 }
@@ -119,7 +119,6 @@
     min-height: 10%;
     margin-bottom: 15px;
     border-bottom: dashed;
-    
 }
 
 .card-header img {
@@ -131,6 +130,7 @@
     pointer-events: none;
     top: 0;
     right: 0;
+    position: absolute;
 }
 
 .card-header h2 {
@@ -138,13 +138,14 @@
     margin: 0;
     text-align: left;
     padding-right: 60px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     overflow-wrap: break-word; /* Ensure long words break and wrap */
 }
 
 .card p {
     font-size: 1.2em;
-    padding-left: 10px;
+    padding: 20px;
     overflow-wrap: break-word; /* Ensure long words break and wrap */
 }
 
