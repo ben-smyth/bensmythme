@@ -1,22 +1,26 @@
 {{define "splash"}}
 <section class="splash-section">
-  <div class="resume">
-    <img src="{{.CustomAssetPath}}images/portrait_bs.jpeg" alt="Portrait" class="" id="profile-image">
-
-  <div class="links">
-    <a href="https://github.com/ben-smyth" target="_blank">
-      <img src="{{.CustomAssetPath}}images/logos/github.png" alt="GitHub Logo" class="social-logo">
-    </a>
-    <a href="https://www.linkedin.com/in/ben-smyth-89a770150/" target="_blank">
-      <img src="{{.CustomAssetPath}}images/logos/linkedin.png" alt="LinkedIn Logo" class="social-logo">
-    </a>
-  </div>
-    <div class="text-container">
+  <div class="business-card">
+    <div class="business-card-header">
+      <img src="{{.CustomAssetPath}}images/portrait_bs.jpeg" alt="Portrait" class="portrait">
+      <div class="social-links">
+        <a href="https://github.com/ben-smyth" target="_blank">
+          <img src="{{.CustomAssetPath}}images/logos/github.png" alt="GitHub Logo" class="social-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/ben-smyth-89a770150/" target="_blank">
+          <img src="{{.CustomAssetPath}}images/logos/linkedin.png" alt="LinkedIn Logo" class="social-logo">
+        </a>
+      </div>
+    </div>
+    <div class="business-card-body">
       <h1>Ben Smyth</h1>
-      <a class="nav-link" href="#experience">> experience</a>
-      <a class="nav-link" href="#portfolio">> portfolio</a>
-      <a class="nav-link" href="#blog">> blog</a>
-      <a class="nav-link" href="#skills">> skills</a>
+      <p class="tagline">Software, Network, and Infrastructure Engineer</p>
+      <nav>
+        <a class="nav-link" href="#experience">> experience</a>
+        <a class="nav-link" href="#portfolio">> portfolio</a>
+        <a class="nav-link" href="#blog">> blog</a>
+        <a class="nav-link" href="#skills">> skills</a>
+      </nav>
     </div>
   </div>
 </section>
