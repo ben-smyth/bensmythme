@@ -27,7 +27,7 @@ func main() {
 
 	title := os.Getenv("APP_TITLE")
 	if title == "" {
-		title = "bensmyth"
+		title = "Ben Smyth"
 	}
 
 	dev := false
