@@ -63,7 +63,7 @@ func main() {
 		r.HandleFunc("/dev", handleWebSocket)
 	}
 
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
+	r.PathPrefix("/static/").Handler(cacheControlMiddleware(http.StripPrefix("/static/", fs)))
 	r.HandleFunc("/", devApp.IndexHandler)
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
@@ -123,4 +123,12 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 	}
+}
+
+func cacheControlMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "max-age=14400")
+
+		next.ServeHTTP(w, r)
+	})
 }
