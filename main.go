@@ -127,7 +127,7 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 
 func cacheControlMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", "max-age=14400")
+		w.Header().Set("Cache-Control", "max-age=14400, must-revalidate")
 
 		next.ServeHTTP(w, r)
 	})
