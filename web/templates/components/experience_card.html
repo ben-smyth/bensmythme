@@ -1,0 +1,14 @@
+{{ define "experience-card" }}
+<div class="experience-container {{.Position}}">
+    <div class="experience-content">
+      <img id=logo src="{{.ImageURL}}" alt="{{.CompanyName}} Logo">
+      <h2>{{.Date}}</h2>
+      <h3>{{.CompanyName}}</h3>
+      <h4>{{.JobTitle}}</h4>
+      <div class="experience-details">
+        <p>{{.Details}}</p>
+      </div>
+    <button class="see-more-btn" onclick="toggleText(this)">+</button>
+    </div>
+  </div>
+{{ end }}
