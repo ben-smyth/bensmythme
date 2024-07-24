@@ -1,0 +1,71 @@
+title: Ben Smyth
+resume:
+  name: Ben Smyth
+  tagline: Software, Network and Infrastructure Engineer
+  image_url: $MYSITEURL$/static/images/portrait_bs.jpeg
+  github_url: https://github.com/ben-smyth/
+  linkedin_url: https://www.linkedin.com/in/ben-smyth-89a770150/
+experience:
+  - company_name: Equinix
+    job_title: Staff Engineer
+    date: 2022 - Present
+    image_url: $MYSITEURL$/static/images/logos/equinix.png
+    position: left
+    details: test
+  - company_name: Sohonet
+    job_title: Network Engineer
+    date: 2020 - 2022
+    image_url: $MYSITEURL$/static/images/logos/sohonet.png
+    position: right
+    details: test
+  - company_name: Citrix
+    job_title: Network Engineer Apprentice
+    date: 2018 - 2020
+    image_url: $MYSITEURL$/static/images/logos/citrix.png
+    position: right
+    details: test
+  - company_name: Cambridge University
+    job_title: Assistant Computer Officer
+    date: 2017 - 2018
+    image_url: $MYSITEURL$/static/images/logos/uoc.png
+    position: left
+    details: test
+  - company_name: CMAT
+    job_title: IT Apprentice
+    date: 2015 - 2017
+    image_url: $MYSITEURL$/static/images/logos/cmat.png
+    position: left
+    details: test
+portfolio:
+  - name: installs
+    description: A project to ensure common packages and configs are in place.
+    blog_url: example.com
+    git_url: github.com/ben-smyth/installs_bs
+  - name: kustomize.nvim
+    description: ci/cd type process for editing kustomized kubernetes manifests.
+    blog_url: example.com
+    git_url: github.com/ben-smyth/kustomize.nvim
+  - name: fupgrade
+    description: Firmware upgrader for network devices - using NorNir and Napalm.
+    git_url: github.com/ben-smyth/fupgrade
+  - name: bensmyth.me
+    description: This website. Written with Golang and templating.
+    git_url: github.com/ben-smyth/bensmythme
+skills:
+  - name: kubernetes and containerization
+    description: placeholder
+    image_url: $MYSITEURL$/static/images/
+  - name: networking
+    description: placeholder
+    image_url: $MYSITEURL$/static/images/
+  - name: golang
+    description: placeholder
+    image_url: $MYSITEURL$/static/images/
+  - name: golang
+    description: placeholder
+    image_url: $MYSITEURL$/static/images/
+testimonials:
+  - from: John Doe
+    testimonial: Ben is bloody epic
+    image_url: $MYSITEURL$/static/images/
+    linkedin_url: example.com

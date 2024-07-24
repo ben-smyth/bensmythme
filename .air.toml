@@ -5,7 +5,7 @@ tmp_dir = "tmp"
 [build]
   args_bin = ["--staticPath='http://localhost:8080/static/'"]
   bin = "./main "
-  cmd = "go build -o ./main ."
+  cmd = "go build -o ./main ./cmd/serve/"
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
   exclude_file = []
@@ -14,7 +14,7 @@ tmp_dir = "tmp"
   follow_symlink = false
   full_bin = ""
   include_dir = []
-  include_ext = ["go","html", "css", "js"]
+  include_ext = ["go","html", "css", "js", "yaml"]
   include_file = []
   kill_delay = "0s"
   log = "build-errors.log"

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 body {
-    /* background: #f0f0f0; */
+    background: #f0f0f0;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     max-width:1400px;
@@ -136,6 +136,7 @@ a {
     background: #f0f0f0;
     min-height: 100vh;
     padding-top: 100px;
+    padding-bottom: 100px;
     text-transform: none;  
 }
 
@@ -248,9 +249,6 @@ a {
     display:none;
 }
 
-.experience-details.show {
-    max-height: 10px;
-}
 
 .experience-details p {
     white-space: pre;
@@ -319,149 +317,6 @@ a {
         left: 0%;
     }
 }
-
-/**/
-/* SKILLS PAGE */
-/**/
-.skill-section {
-    /* font-family: 'Anton', sans-serif; */
-    height: 100vh; 
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    background: #f0f0f0;
-    margin: 0 auto;
-}
-
-
-.skill-section h1 {
-    /* align-self: flex-start; */
-    margin: 0; /* Remove any default margin */
-    padding-top: 3vh; /* Add padding if needed to adjust spacing */
-    padding-left: 3vh;
-    padding-bottom: 3vh;
-    /* font-family: 'Anton', sans-serif; */
-
-    /* font-size: 4em; /* Adjust the font size as needed */
-}
-
-.skills-container {
-    position: absolute;
-    overflow-x: scroll;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    padding-top: 15vh;
-    padding-left: 75px;
-    scroll-behavior: smooth;
-}
-
-.skills-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
-}
-
-.skills-card-outer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px; /* Add padding to create the bezel effect */
-    min-height: 40vh; /* Adjust height to fit content */
-    max-height: 40vh;
-    width: 620px; /* Slightly wider to accommodate the inner card */
-    min-width:500px;
-    max-width: 600px;
-    max-width: 90vw; /* Ensure it doesn't exceed device width */
-    margin: 35px;
-    border: 2px solid #ddd; /* Thin border for the bezel effect */
-    border-radius: 10px;
-    background-color: #007bff;
-    opacity: 70%;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.skills-card {
-    position: relative;
-    display: flex;
-    flex-direction: column; /* Ensure column layout for content */
-    justify-content: space-between;
-    text-align: center;
-    /* align-items: flex-start; */
-    height: 100%; /* Ensure it takes full height of the outer card */
-    width: 100%; /* Ensure it takes full width of the outer card */
-    margin: 0; /* Remove margin */
-    border-radius: 8px; /* Slightly smaller border radius to fit within outer card */
-    background-color: #fff; /* Ensure it has a background color */
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Optional: Add an inset shadow for depth */
-    opacity: 100%;
-}
-
-/* Ensure text and images scale within the card */
-.skills-card h2 {
-    font-size: 2em; /* Use responsive font size */
-    margin: 20px 0; /* Add margin for spacing */
-    font-family: 'Anton', sans-serif;
-    text-transform: uppercase;
-}
-
-.skills-card img {
-    max-width: 40%;
-    padding: 20px;
-    height: auto;
-    margin: 10px 0;
-    position: absolute;
-    /* top: 20px; /* Adjust to create space from the top */ */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Example of how to style text content within the card */
-.skills-card p {
-    font-size: 1.2em; /* Use responsive font size */
-    margin: 10px 0; /* Add margin for spacing */
-    text-align: center; /* Center the text */
-}
-
-.skills-card h1 {
-    align-self: top;
-    font-size: 2em;
-    font-family: 'Roboto', sans-serif;
-}
-
-.skills-card-outer:hover {
-    transform: translateY(-10px);
-}
-
-
-/* Child div to position the image at the bottom */
-.card-certification {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-end; /* Align items at the bottom */
-    width: 100%;
-    margin:0;
-    padding: 10px;
-    margin-top: auto; /* Push the certification div to the bottom */
-}
-
-/* Image inside the child div */
-.card-certification img {
-    position: absolute;
-    left: 50%;
-
-    width: 50%;
-    height: auto;
-    max-width: 150px;
-    max-height: 150px;
-    pointer-events: none;
-}
-
 
 /* Navigation links container */
 nav {
@@ -537,14 +392,3 @@ nav {
         font-size: 1.8em;
     }
 }
-
-@media (max-width: 600px) {
-    .skills-container {
-        padding-left: 15px;
-    }
-    .skills-card-outer {
-        min-width: 90vw;
-        /* margin: 10px; */
-    }
-}
-
