@@ -16,10 +16,18 @@
       <h1>{{.Content.Title}}</h1>
       <p class="tagline">{{.Content.Resume.Tagline}}</p>
       <nav>
+        {{if .Content.SectionSelection.Experience}}
         <a class="nav-link" href="#experience">> experience</a>
+        {{end}}
+        {{if .Content.SectionSelection.Portfolio}}
         <a class="nav-link" href="#portfolio">> portfolio</a>
+        {{end}}
+        {{if .Content.SectionSelection.Skills}}
         <a class="nav-link" href="#skills">> skills</a>
+        {{end}}
+        {{if .Content.SectionSelection.Blog}}
         <a class="nav-link" href="#blog">> blog</a>
+        {{end}}
       </nav>
     </div>
   </div>

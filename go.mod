@@ -1,4 +1,4 @@
-module ben/gohtmx
+module github.com/ben-smyth/bensmythme
 
 go 1.21.4
 

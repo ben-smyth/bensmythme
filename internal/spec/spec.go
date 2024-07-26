@@ -9,12 +9,22 @@ import (
 )
 
 type WebsiteSpec struct {
-	Title        string         `yaml:"title"`
-	Resume       Resume         `yaml:"resume"`
-	Experience   []Experience   `yaml:"experience"`
-	Portfolio    []Portfolio    `yaml:"portfolio"`
-	Skills       []Skills       `yaml:"skills"`
-	Testimonials []Testimonials `yaml:"testimonials"`
+	Title            string           `yaml:"title"`
+	Integrations     Integrations     `yaml:"integrations"`
+	SectionSelection SectionSelection `yaml:"section-select"`
+	Resume           Resume           `yaml:"resume"`
+	Experience       []Experience     `yaml:"experience"`
+	Portfolio        []Portfolio      `yaml:"portfolio"`
+	Skills           []Skills         `yaml:"skills"`
+	Testimonials     []Testimonials   `yaml:"testimonials"`
+}
+
+type SectionSelection struct {
+	Experience   bool `yaml:"experience"`
+	Skills       bool `yaml:"skills"`
+	Portfolio    bool `yaml:"portfolio"`
+	Blog         bool `yaml:"blog"`
+	Testimonials bool `yaml:"testimonials"`
 }
 
 type Resume struct {
@@ -52,6 +62,16 @@ type Testimonials struct {
 	From        string `yaml:"from"`
 	Testimonial string `yaml:"testimonial"`
 	ImageURL    string `yaml:"image_url"`
+}
+
+type Integrations struct {
+	Blogger Blogger `yaml:"blogger"`
+}
+
+type Blogger struct {
+	BlogId       int    `yaml:"id"`
+	APIKeyEnvVar string `yaml:"apiKeyEnvVar"`
+	MaxResults   int    `yaml:"maxResults"`
 }
 
 func LoadWebsiteSpec(siteUrl, yamlFile string) (WebsiteSpec, error) {
