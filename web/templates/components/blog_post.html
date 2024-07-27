@@ -1,0 +1,9 @@
+{{range .Items}}
+    <div class="post">
+        <h2>{{.Title}}</h2>
+        <p><strong>Author:</strong> {{.Author.DisplayName}}</p>
+        <p><strong>Published:</strong> {{.Published}}</p>
+        <p>{{.Content}}</p>
+        <a href="{{.URL}}">Read more</a>
+    </div>
+{{end}}

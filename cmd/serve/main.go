@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ben-smyth/bensmythme/internal/blog"
+	"github.com/ben-smyth/bensmythme/api/blog"
 	"github.com/ben-smyth/bensmythme/internal/spec"
 	"github.com/ben-smyth/bensmythme/web"
 )
@@ -45,7 +45,7 @@ func main() {
 			fmt.Println(fmt.Errorf("blogspot api key not set. Env var: %v", websiteSpec.Integrations.Blogger.APIKeyEnvVar))
 			return
 		}
-		blog.InitBlogSettings(blogspotApiKey)
+		blog.InitBlogSettings(blogspotApiKey, websiteSpec.Integrations.Blogger.BlogId)
 	}
 
 	app := web.App{

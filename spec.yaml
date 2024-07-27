@@ -1,8 +1,8 @@
 title: Ben Smyth
 section-select:
-  experience: false
-  skills: false
-  portfolio: false
+  experience: true
+  skills: true
+  portfolio: true
   blog: true
 resume:
   name: Ben Smyth

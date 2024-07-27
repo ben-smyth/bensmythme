@@ -33,7 +33,7 @@ func ServeWebsite(dev bool, relativeStaticLocation string, app App) error {
 	}
 
 	r.PathPrefix("/static/").Handler(cacheControlMiddleware(http.StripPrefix("/static/", fs)))
-	r.HandleFunc("/api/blog", blog.GetBlogPosts)
+	r.HandleFunc("/blog/posts", blog.GetBlogPosts)
 	r.HandleFunc("/", app.IndexHandler)
 
 	return http.ListenAndServe(fmt.Sprintf(":%s", app.Port), r)
