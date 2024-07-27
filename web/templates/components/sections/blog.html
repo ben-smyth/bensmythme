@@ -2,7 +2,9 @@
 <section id="blog" class="custom-section">
     <div class="col-md-6 d-flex flex-column justify-content-right align-items-center">
         <h1>blog</h1>
-        <p>This is the blog.</p>
+        <div hx-get="/blog/posts" hx-trigger="load" hx-swap="innerHTML" id="posts">
+
+        </div>
     </div>
 </section>
 {{end}}

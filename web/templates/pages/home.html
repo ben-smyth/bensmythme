@@ -1,15 +1,23 @@
 {{ define "home" }}
-{{template "header" .}}
+{{template "header" . }}
 
-{{template "splash" .}}
+{{template "splash" . }}
 
+{{if .Content.SectionSelection.Experience}}
 {{template "experience" . }}
+{{end}}
 
+{{if .Content.SectionSelection.Portfolio}}
 {{template "portfolio" . }}
+{{end}}
 
+{{if .Content.SectionSelection.Skills}}
 {{template "skills" . }}
+{{end}}
 
-{{template "blog" .}}
+{{if .Content.SectionSelection.Blog}}
+{{template "blog" . }}
+{{end}}
 
 <a id="back-to-top" href="#">back2top</a>
 

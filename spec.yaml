@@ -1,4 +1,9 @@
 title: Ben Smyth
+section-select:
+  experience: true
+  skills: true
+  portfolio: true
+  blog: true
 resume:
   name: Ben Smyth
   tagline: Software, Network and Infrastructure Engineer
@@ -69,3 +74,8 @@ testimonials:
     testimonial: Ben is bloody epic
     image_url: $MYSITEURL$/static/images/
     linkedin_url: example.com
+integrations:
+  blogger:
+    id: 8021318868660368296
+    apiKeyEnvVar: BLOGGER_APIKEY1
+    maxResults: 5

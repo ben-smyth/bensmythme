@@ -1,7 +1,6 @@
 package web
 
 import (
-	"ben/gohtmx/internal/spec"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -9,6 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/ben-smyth/bensmythme/api/blog"
+	"github.com/ben-smyth/bensmythme/internal/spec"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/websocket"
 )
@@ -32,6 +33,7 @@ func ServeWebsite(dev bool, relativeStaticLocation string, app App) error {
 	}
 
 	r.PathPrefix("/static/").Handler(cacheControlMiddleware(http.StripPrefix("/static/", fs)))
+	r.HandleFunc("/blog/posts", blog.GetBlogPosts)
 	r.HandleFunc("/", app.IndexHandler)
 
 	return http.ListenAndServe(fmt.Sprintf(":%s", app.Port), r)
@@ -69,9 +71,10 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// cacheControlMiddleware - prevent caching static files for too long
 func cacheControlMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", "max-age=14400, must-revalidate")
+		w.Header().Set("Cache-Control", "max-age=7200, must-revalidate")
 
 		next.ServeHTTP(w, r)
 	})
